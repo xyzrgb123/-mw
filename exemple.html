@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="exemple.css">
+    <link rel="stylesheet" href="mw/mw.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='mw/mw.js'></script>
+</head>
+
+<body>
+    <div id="mw_bg" class='mw_close'></div>
+    <div id='exemple' class='mw'>При закрытии окно 'заныривает' обратно. <br>Жми на фон</div>
+    <div id='script' class='mw'>mw.go()</div>
+    <h1>Плагин модального окна 'mw'</h1>
+    <h2>В чем фича</h2>
+    <p>При открытии, окно 'выныривает' из нажатого элемента на странице.
+        <a href="#" mw='exemple'>Попробуй</a></p>
+    <h2>Как подключить</h2>
+    <p>0. Подключи jquery</p>
+    <p>1. Подключи файл <span>mw.css</span></p>
+    <p>2. Подключи файл <span>mw.js</span></p>
+    <p>3. После загрузки страницы должен сработать вот такой <a href="#" mw='script'>скрипт</a></p>
+    <p>4. В начале содержимого body нарисуй пустой блок вот с
+        <span>id=mw_bg</span> (это фон для твоих окон)</p>
+    <h2>Как использовать</h2>
+    <p>1. У всех своих модальных окон пропиши атрибут <span>id</span>.</p>
+    <p>2. В кликабельном элементе пропиши атрибут <span>mw</span>, значение которого должно совпадать с <span>id</span> открываемого им окна</p>
+    <p>3. любой элемент с классом <span>mw_close</span> закроет окно</p>
+    <h2>Как настроить</h2>
+    <p>Вся анимация прописана в <span>mw.css</span> поэтому все настройки в нем же, или в файле <span>mw.styl</span>, если владеешь препроцессором stylus.</p>
+</body>
+<script>mw.go()</script>
+
+</html>
