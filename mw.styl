@@ -1,0 +1,77 @@
+mw_bg_speed = 400 // Скорость фона
+mw_speed = mw_bg_speed // Скорость окна
+mw_bg_tf = ease // Временная функция фона
+mw_tf = mw_bg_tf // Временная функция окна
+
+mw_bg_close() // Закрытый фон
+    background-color alpha(black, 0)
+mw_bg_open() // Открытый фон
+    background-color alpha(black, .5)
+mw_close() // Закрытое окно
+    transform scale(0)
+mw_open() // Открытое окно
+    transform scale(1)
+    
+
+
+    
+    
+
+        
+mw()
+    position fixed
+    animation-fill-mode both
+    visibility hidden
+        
+#mw_bg
+    mw()
+    top 0
+    left 0
+    width 100vw
+    height 100vh
+    animation-duration unit(mw_bg_speed, ms)
+    animation-timing-function mw_tf
+.mw
+    mw()
+    transition unit(mw_speed, ms)
+    transition-timing-function mw_tf
+    animation-duration unit(mw_speed, ms)
+    animation-timing-function mw_tf
+    transform-origin top left
+        
+@keyframes mw_bg_open
+    0%
+        visibility hidden
+        mw_bg_close()
+    100%
+        visibility visible
+        mw_bg_open()
+@keyframes mw_bg_close
+    100%
+        visibility hidden
+        mw_bg_close()
+    0%
+        visibility visible
+        mw_bg_open()
+@keyframes mw_open
+    0%
+        visibility hidden
+        mw_close()
+    100%
+        visibility visible
+        mw_open()
+@keyframes mw_close
+    100%
+        visibility hidden
+        mw_close()
+    0%
+        visibility visible
+        mw_open()
+    
+
+
+
+        
+        
+
+    
